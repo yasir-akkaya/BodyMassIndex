@@ -1,0 +1,67 @@
+function bke(){
+    var boy = document.getElementById("boy").value;
+    var kilo = document.getElementById("kilo").value;
+    var cinsiyet = document.getElementById("cinsiyet").value;
+    var yas = document.getElementById("yas").value;
+    var bkeSonuc = document.getElementById("bkeSonuc").value;
+
+    
+    var yasCarpani ;
+    if(yas <10){
+        yasCarpani= 1.01
+    }
+    else if(yas >=10 && yas<20){
+        yasCarpani= 1.02
+    }
+    else if(yas >=20 && yas<30){
+        yasCarpani= 1.03
+    }
+    else if(yas >= 30 && yas<40){
+        yasCarpani= 1.04
+    }
+    else if(yas >= 40 && yas<50){
+        yasCarpani= 1.05
+    }
+    else if(yas >= 50 && yas<60){
+        yasCarpani= 1.06
+    }
+    else if(yas >= 60 && yas<70){
+        yasCarpani= 1.07
+    }
+    else if(yas >= 70 && yas<80){
+        yasCarpani= 1.08
+    }
+    else if(yas >= 80 && yas<90){
+        yasCarpani= 1.09
+    }
+    else if(yas >= 90 && yas<100){
+        yasCarpani= 1.1
+    }
+    else{
+        yasCarpani=1.11
+    }
+
+    var cinsiyetCarpani;
+    if (cinsiyet="Erkek"){
+        cinsiyetCarpani=1.1;
+    }
+    else{
+        cinsiyetCarpani=0.9;
+    }
+    var boyCm= Number(boy)/100;
+
+    bkeSonuc= (Number(kilo))/ (Number(boyCm)*Number(boyCm))*cinsiyetCarpani*yasCarpani
+    
+    if(bkeSonuc<18.5){
+        alert("Zayıfsınız!")
+    }
+    else if(bkeSonuc>=18.5 && bkeSonuc<25){
+        alert("Normal Kilodasınız!")
+    }
+    else if(bkeSonuc>=25 && bkeSonuc<30){
+        alert("Kilolusunuz!")
+    }
+    else if(bkeSonuc>=30) {
+        alert("Aşırı Kilolusunuz!")
+    }
+}
